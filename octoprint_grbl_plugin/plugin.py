@@ -20,6 +20,8 @@ def unsupported_commands(comm_instance, phase, cmd, cmd_type, gcode, *args, **kw
     if cmd == 'M114':
         # Get current position
         return '?'
+    if cmd.startswith('G4'):
+        return None;
 
 
 def translate_ok(comm_instance, line, *args, **kwargs):
